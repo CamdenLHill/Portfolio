@@ -1,6 +1,6 @@
 # Site settings
-title: "Jekyll Resume Template"
-description: "A resume template for Jekyll and GitHub Pages sites."
+title: "Camden Hill's Resume and Porfolio
+description: "This serves as my personal website and contains my full volume of work."
 
 # Build settings
 markdown: kramdown
@@ -10,20 +10,20 @@ sass:
 
 # Resume settings
 resume_avatar:                  "true"
-resume_name:                    "Lisa M. Simpson"
-resume_title:                   "VP of Global Communications"
+resume_name:                    "Camden L. Hill"
+resume_title:                   "Aerospace Engineer & Mechanical Engineering MS Student"
 
 # used for the contact button in _layouts/resume.html
-resume_contact_email:           "lisasimpson@youremailaddress.com"
+resume_contact_email:           "hillarious2103@outlook.com"
 
 # the next two items are used for schema itemprops in _layouts/resume.html
-resume_contact_telephone:       "555-7334"
-resume_contact_address:         "742 Evergreen Terrace, Springfield"
+resume_contact_telephone:       "346-334-2229"
+resume_contact_address:         "2103 Noblewood Ct., League City"
 
-resume_header_contact_info:     "742 Evergreen Terrace, Springfield • 555-7334 • lisasimpson@youremailaddress.com"
+resume_header_contact_info:     "2103 Noblewood Ct., League City • 346-334-2229 • hillarious2103@outlook.com"
 display_header_contact_info:    "false"
 
-resume_header_intro: "<p>This is the executive summary. You should write a few brief, concise, and meaningful sentences about yourself from a professional context, and your immediate career goals. Make the length appropriate for your needs, but keep it brief and concise</p>"
+resume_header_intro: "<p>I graduated from Texas A&M University in 2025 & began my Masters of Science in Mechanical Engineering in the Fall. I've interned at three aerospace organizations focusing primarily on software development for testing applications, and, secondarily, on stress analysis and design. I've completed a lunar lander project, multiple rocket engine injector and nozzle designs, and many other projects.</p>"
 
 # use "yes" to display the email contact button,
 # "no" to display an "I'm not looking for work" message,
