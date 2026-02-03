@@ -21,7 +21,7 @@
   width: 200px; // 98px
   max-width: 100%;
   overflow: hidden;
-  @include border-radius(200px);
+  @include border-radius(20px);
   margin: 0 auto;
   display: block;
 }
