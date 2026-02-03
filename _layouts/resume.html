@@ -97,14 +97,14 @@
       {% endif %}
 
 
-      {% if site.resume_section_personal_projects %}
+      {% if site.resume_section_design_projects %}
       <!-- begin Personal Projects -->
       <section class="content-section">
         <header class="section-header">
-          <h2>Personal Projects</h2>
+          <h2>Design Projects</h2>
         </header>
 
-        {% for project in site.data.personal_projects %}
+        {% for project in site.data.design_projects %}
         <div class="resume-item" itemscope itemtype="http://schema.org/CreativeWork">
           <meta itemprop="creator" content="{{ site.resume_name }}" itemtype="http://schema.org/Person" />
           <h3 class="resume-item-title" itemprop="name">{% if project.url %}<a href="{{ project.url }}" itemprop="url">{{ project.project }}</a>{% else %}{{ project.project }}{% endif %}</h3>
@@ -118,14 +118,14 @@
       <!-- end Personal Projects -->
       {% endif %}
 
-      {% if site.resume_section_projects %}
+      {% if site.resume_section_software_projects %}
       <!-- begin Projects -->
       <section class="content-section">
         <header class="section-header">
-          <h2>Projects</h2>
+          <h2>Software Projects</h2>
         </header>
 
-        {% for project in site.data.projects %}
+        {% for project in site.data.software_projects %}
         <div class="resume-item" itemscope itemtype="http://schema.org/CreativeWork">
           <meta itemprop="creator" content="{{ site.resume_name }}" itemtype="http://schema.org/Person" />
           <h3 class="resume-item-title" itemprop="name">{% if project.url %}<a href="{{ project.url }}" itemprop="url">{{ project.project }}</a>{% else %}{{ project.project }}{% endif %}</h3>
