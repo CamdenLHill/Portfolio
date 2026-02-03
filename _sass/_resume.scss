@@ -17,11 +17,14 @@
 }
 
 // page header styles
-.images {
+.project_images {
   width: 400px; // 98px
-  // max-width: 100%;
+  max-width: 100%;
   height: auto;
   overflow: hidden;
+  // @include border-radius(200px);
+  // margin: 0 auto;
+  // display: block;
 }
 
 .page-header { padding: 1.5rem 0;
