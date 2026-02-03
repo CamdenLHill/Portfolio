@@ -4,20 +4,20 @@
 - project: Sounding Rocketry Team (TAMU SRT)
   role: Propulsion Member
   duration: Winter 2025 &mdash; Present
-  picture_name: SRT Gluon FEA.png
+  picture_name: SRT.png
   url: "https://www.tamusrt.org/"
   description: My work on the Sounding Rocketry Team (SRT) is ongoing, but I lead the redesign project for our Gluon Rocket’s nozzle and have other nozzle and injector projects I’m currently working on. Our team’s rocket engines are hybrid engines that use Nitrous Oxide in combination with fuel grains such as ABS plastic. We planned to switch our Graphite nozzle to a Graphite-Phenolic nozzle, but we ultimately decided against this because it halved our number of engine lights. I then simulated the nozzle with a combined Ansys Mechanical and Ansys Transient Thermal analysis with variable applied loads determined by isentropic flow theory. The result of this project was the thickening of the converging section and throat of the nozzle to prevent cracking. I designed our team’s first swirl injector for our hybrid engine, and, following feedback from the PDR, switched to a Vortex Impinging Coin Injector. This decision was made because we have previous experience as a team with this type of injector, and due to concerns about combustion instability. 
 
 - project: Lunar Lander Capstone
   role: Propulsion Team Lead
   duration: Winter 2024 &mdash; Spring 2025
-  picture_name: LM1.png
+  picture_name: LM.png
   # url: "#"
   description: I led the propulsion team on my 21st-century lunar module capstone project. The projects Phase 1 goal was to reduce the mass of the original Apollo 11 lunar module with modern technologies, and Phase 2 was to design a lunar lander with new and improved mission goals. At the beginning of the first semester, my responsibilities were to complete trade studies for the main engine propellant combination and the resulting main engine candidates. Towards the end of the semester, I researched COPVs and cryogenic cooling to accurately size the propellant tanks for the mission. During the second semester, our team focused on the human risk associated with creating a lunar lander, so our work involved creating a 1-to-1 scale model of the lunar module’s crew cabin.
 
 - project: Rocket Engine Design Team (TAMU RED)
   role: Thrust Chamber Assembly Member
   duration: Winter 2023 &mdash; Spring 2024
-  picture_name: Other pic.jpg
+  picture_name: RED.png
   url: "https://www.tamured.space/"
   description: I completed FEA and CFD analysis for RED Rocketry’s first-generation rocket engine. This involved modeling the test stand in SolidWorks and applying load conditions determined using one-dimensional compressible flow theory and the design thrust vector. I wrote the team’s nozzle software, which takes several geometric parameters and rocketry parameters and generates a bell nozzle that can be imported into modeling and simulation software. I also completed some preliminary design work for RED Rocketry’s second-generation rocket engine and created videos to educate team members on key rocketry concepts.
