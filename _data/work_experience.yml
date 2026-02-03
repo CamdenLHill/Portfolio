@@ -1,15 +1,16 @@
 # Jobs
 - company: NASA Marshall Space Flight Center
   position: ECLSS Intern
-  duration: June, 2025 &mdash; August 2025
+  duration: June, 2025 &mdash; August, 2025
   summary: I completed a MATLAB library that processes on-orbit data for one of the International Space Station’s Life Support (ECLSS) systems and produces performance and operational data. Python is used to process the large data files into graphs for the team’s periodic analysis of the system. Moving the library from VBA to MATLAB & Python allowed the team to poll the data at one-second intervals to allow for much higher data fidelity and reduce the time to complete the data analysis from hours to seconds. After completing the MATLAB & Python library, I completed weekly literature reviews for key aspects of historical ECLSS systems to produce concise summaries to assist with future system development. 
 
-- company: United Nations Human Rights Council
-  position: Director of Digital Strategy
-  duration:  Jun, 2010 &mdash; Sept, 2013
-  summary: Write about your core competencies in one or two sentences describing your position. If you held the position for a long time, it could be a longer section, including a couple bullet points	<ul class="resume-item-list"><li>A project you are proud of</li><li>Another awesome project</li><li>or a team or department you worked with</li></ul>
+- company: Axiom Space
+  position: Software Intern
+  duration:  June, 2024 &mdash; August 2024
+  summary: I created a Python library that utilized Python’s Object-Oriented Programming to serialize and deserialize JSON objects. While writing the Python library for the Power, Avionics, and Controls team, I learned to work in a developer environment by using GitLab and completing unit testing, code documentation, and code reviews. Additionally, I utilized LabVIEW software to connect, interface with, and configure various electrical instruments, creating a test stand for electrical equipment.
+  # summary: Write about your core competencies in one or two sentences describing your position. If you held the position for a long time, it could be a longer section, including a couple bullet points	<ul class="resume-item-list"><li>A project you are proud of</li><li>Another awesome project</li><li>or a team or department you worked with</li></ul>
 
-- company: Springfield Women & Children's Center
-  position: Communications Coordinator
-  duration:   Jun, 2008  &mdash; May, 2010
-  summary: Led communication efforts across digital and traditional media channels for marketing and public relations, internal communication strategies, and coordinated support programs for the recipients of the center's services.
+- company: Intuitive Machines
+  position: Testing Intern
+  duration:   May, 2023 &mdash; August 2023
+  summary: I created Python libraries to process large sensor data CSV files from engine tests, created using LabVIEW, into organized folder structures. The processed data was then used to create many graphs to analyze the expected performance of the lunar lander’s Methane engine. Additionally, I gained experience with CAD, Finite Element Analysis, and part assembly while designing aerospace ground equipment, and learned more about rocketry principles from my data analysis.
