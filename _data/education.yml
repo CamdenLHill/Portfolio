@@ -1,13 +1,13 @@
 # Degree
-- degree: Bachelor of Science, Aerospace Engineering
-  uni: Yale University
-  year: 2004 &mdash; 2008
-  awards:
-    - award: Summa Cumme Laude graduate
-  summary: If you had any meaningful roles at college, feel free to write about them here
+- degree: Bachelors of Science, Aerospace Engineering
+  uni: Texas A&M University
+  year: 2021 &mdash; 2025
+  # awards:
+  #   - award: Summa Cumme Laude graduate
+  # summary: Member of m
 
-- degree: High School Diploma
+- degree: Masters of Science, Mechanical Engineering
   uni: Springfield High School
-  year: 2004
-  award: Most likely to succeed
-  summary: You can choose to have either a single or multiple awards
+  year: 2025 &mdash; present
+  # award: Most likely to succeed
+  # summary: You can choose to have either a single or multiple awards
