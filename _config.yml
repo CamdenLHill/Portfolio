@@ -1,6 +1,3 @@
-jobs:
-  runs-on: self-hosted
-
 # Site settings
 title: "Camden Hill's Resume and Porfolio"
 description: "This serves as my personal website and contains my full volume of work."

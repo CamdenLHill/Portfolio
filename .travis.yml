@@ -9,6 +9,3 @@ install: bundle install
 
 notifications:
   email: false
-
-jobs:
-  runs-on: self-hosted
