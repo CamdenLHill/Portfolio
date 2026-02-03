@@ -1,10 +1,11 @@
-# Projects
+# Design Projects
 # uncomment the urls if you wish to display them, and add your own URL
 
 # jazznotes.io
 - project: Lunar Lander Capstone
   role: Founder & Primary Developer
   duration: 2012 &mdash; Present
+  picture_name: LM1
   # url: "#"
   description: Jazz Notes is an open source node/ember app that helps you keep track of your music compositions and new ideas.
 
