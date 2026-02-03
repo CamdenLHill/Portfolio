@@ -17,6 +17,14 @@
 }
 
 // page header styles
+.images {
+  width: 200px; // 98px
+  max-width: 100%;
+  overflow: hidden;
+  @include border-radius(200px);
+  margin: 0 auto;
+  display: block;
+}
 
 .page-header { padding: 1.5rem 0;
 
