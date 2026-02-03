@@ -1,16 +1,42 @@
-# Projects
+# Software Projects
 # uncomment the urls if you wish to display them, and add your own URL
 
-# jazznotes.io
-- project: jazznotes.io
-  role: Founder & Primary Developer
-  duration: 2012 &mdash; Present
-  # url: "#"
-  description: I led the propulsion team on my 21st-century lunar module capstone project. The projects Phase 1 goal was to reduce the mass of the original Apollo 11 lunar module with modern technologies, and Phase 2 was to design a lunar lander with new and improved mission goals. At the beginning of the first semester, my responsibilities were to complete trade studies for the main engine propellant combination and the resulting main engine candidates. Towards the end of the semester, I researched COPVs and cryogenic cooling to accurately size the propellant tanks for the mission. During the second semester, our team focused on the human risk associated with creating a lunar lander, so our work involved creating a 1-to-1 scale model of the lunar module’s crew cabin.
+- project: Multi-layer Composite Stress & Strain Curve
+  url: "#"
+  description: 
 
-# Springfield Community Outreach Group
-- project: Springfield Community Outreach Group
-  role: Co-Founder & Organizer
-  duration: 2007 &mdash; Present
-  # url: "#"
-  description: SCOG is a local monthly meetup in Springfield where we share opportunities to volunteer in the community and organize support for families and neighborhoods in need of assistance that the community can provide.
+- project: RS25 Engine Analysis
+  url: "#"
+  description: 
+
+- project: Lunar Lander Mass Modeling
+  url: "#"
+  description: 
+
+- project: 1D Piecewise Thermal FEA
+  url: "#"
+  description: 
+
+- project: 1D Vibration FEA Camden Hill
+  url: "#"
+  description: 
+
+- project: 1D FDM and FEA Bending
+  url: "#"
+  description: 
+
+- project: Turbine Project
+  url: "#"
+  description: 
+
+- project: Axial Compressor Project
+  url: "#"
+  description: 
+
+- project: Vibrations 3DOF Spring Mass Damper
+  url: "#"
+  description: 
+
+- project: Vibrations 3DOF Spring Mass
+  url: "#"
+  description: 
