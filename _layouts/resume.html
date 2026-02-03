@@ -104,7 +104,7 @@
           <h2>Personal Projects</h2>
         </header>
 
-        {% for project in site.data.personal projects %}
+        {% for project in site.data.personal_projects %}
         <div class="resume-item" itemscope itemtype="http://schema.org/CreativeWork">
           <meta itemprop="creator" content="{{ site.resume_name }}" itemtype="http://schema.org/Person" />
           <h3 class="resume-item-title" itemprop="name">{% if project.url %}<a href="{{ project.url }}" itemprop="url">{{ project.project }}</a>{% else %}{{ project.project }}{% endif %}</h3>
@@ -114,7 +114,7 @@
         {% endfor %}
 
       </section>
-      <!-- end Projects -->
+      <!-- end Personal Projects -->
       {% endif %}
 
       {% if site.resume_section_projects %}
