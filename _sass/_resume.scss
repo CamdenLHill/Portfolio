@@ -18,8 +18,9 @@
 
 // page header styles
 .images {
-  width: 200px; // 98px
-  max-width: 100%;
+  width: 400px; // 98px
+  // max-width: 100%;
+  height: auto;
   overflow: hidden;
   @include border-radius(20px);
   margin: 0 auto;
