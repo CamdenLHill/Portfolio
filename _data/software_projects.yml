@@ -2,41 +2,41 @@
 # uncomment the urls if you wish to display them, and add your own URL
 
 - project: Multi-layer Composite Stress & Strain Curve
-  url: "#"
-  description: 
+  url: "https://github.com/CamdenLHill/Portfolio/tree/6f08802640fb34b2dfcb2037445d1e626f76a738/Scripts/Multi-layer%20Composite%20Stress%20%26%20Strain%20Curve"
+  description: The final project in my composites class used to calculate the multiple yield/failure points of a multi-layer composite.
 
 - project: RS25 Engine Analysis
-  url: "#"
-  description: 
+  url: "https://github.com/CamdenLHill/Portfolio/tree/6f08802640fb34b2dfcb2037445d1e626f76a738/Scripts/RS25%20Engine%20Analysis"
+  description: The final project in my aerospace propulsion class which uses isentropic flow principles to estimate and characterize undisclosed characteristics of the RS-25 rocket engine.
 
 - project: Lunar Lander Mass Modeling
-  url: "#"
-  description: 
+  url: "https://github.com/CamdenLHill/Portfolio/tree/6f08802640fb34b2dfcb2037445d1e626f76a738/Scripts/Lunar%20Lander%20Mass%20Modeling"
+  description: The software used to estimate the volume of propellant required for our team's lunar lander given initial/dry mass.
 
 - project: 1D Piecewise Thermal FEA
-  url: "#"
-  description: 
+  url: "https://github.com/CamdenLHill/Portfolio/tree/6f08802640fb34b2dfcb2037445d1e626f76a738/Scripts/1D%20Piecewise%20Thermal%20FEA"
+  description: Uses Euler-Bernoulli Beam theory principles to develop a Finite Difference and Finite Element Method to calculate moments, forces, and displacement in a beam.
 
 - project: 1D Vibration FEA Camden Hill
-  url: "#"
-  description: 
+  url: "https://github.com/CamdenLHill/Portfolio/tree/6f08802640fb34b2dfcb2037445d1e626f76a738/Scripts/1D%20Vibration%20FEA%20Camden%20Hill"
+  description: Uses 1D vibration theory to develop a Finite Difference and Finite Element Method to calculate beam behavior.
 
 - project: 1D FDM and FEA Bending
-  url: "#"
-  description: 
+  url: "https://github.com/CamdenLHill/Portfolio/tree/6f08802640fb34b2dfcb2037445d1e626f76a738/Scripts/1D%20FDM%20and%20FEA%20Bending"
+  description: Uses 1D heat transfer theory to develop a Finite Difference and Finite Element Method to calculate the temperature and rate of heat transfer in a piecewise or homogenous beam.
 
 - project: Turbine Project
-  url: "#"
-  description: 
+  url: "https://github.com/CamdenLHill/Portfolio/tree/6f08802640fb34b2dfcb2037445d1e626f76a738/Scripts/Turbine%20Project"
+  description: Calculates turbine blade design characteristics, such as rotor and stator blade angles, given thermodynamic properties. 
 
 - project: Axial Compressor Project
-  url: "#"
-  description: 
+  url: "https://github.com/CamdenLHill/Portfolio/tree/6f08802640fb34b2dfcb2037445d1e626f76a738/Scripts/Axial%20Compressor%20Project"
+  description: Calculates compressor blade design characteristics, such as rotor and stator blade angles, given thermodynamic properties. 
 
 - project: Vibrations 3DOF Spring Mass Damper
-  url: "#"
+  url: "https://github.com/CamdenLHill/Portfolio/tree/6f08802640fb34b2dfcb2037445d1e626f76a738/Scripts/Vibrations%203DOF%20Spring%20Mass%20Damper"
   description: 
 
 - project: Vibrations 3DOF Spring Mass
-  url: "#"
+  url: "https://github.com/CamdenLHill/Portfolio/tree/6f08802640fb34b2dfcb2037445d1e626f76a738/Scripts/Vibrations%203DOF%20Spring%20Mass"
   description: 
