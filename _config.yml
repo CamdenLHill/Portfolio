@@ -1,4 +1,5 @@
-runs-on: LAPTOP-J407OJRF
+jobs:
+  runs-on: self-hosted
 
 # Site settings
 title: "Camden Hill's Resume and Porfolio"
