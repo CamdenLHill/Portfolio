@@ -19,7 +19,7 @@
 
 - project: 1D Vibration FEA Camden Hill
   url: "https://github.com/CamdenLHill/Portfolio/tree/6f08802640fb34b2dfcb2037445d1e626f76a738/Scripts/1D%20Vibration%20FEA%20Camden%20Hill"
-  description: Uses 1D vibration theory to develop a Finite Difference and Finite Element Method to calculate beam behavior.
+  description: Uses 1D vibration theory to develop a Finite Difference and Finite Element Methods to calculate beam behavior.
 
 - project: 1D FDM and FEA Bending
   url: "https://github.com/CamdenLHill/Portfolio/tree/6f08802640fb34b2dfcb2037445d1e626f76a738/Scripts/1D%20FDM%20and%20FEA%20Bending"
