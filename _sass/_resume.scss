@@ -17,23 +17,23 @@
 }
 
 // page header styles
-.project_images {
-  width: 100%; /* or another specific value */
+.project_images_75 {
+  width: 75%;
   margin-left: auto;
   margin-right: auto;
-  /* or shorthand: */
   margin: 0 auto;
 }
-// .project_images {
+
+.project_images {
 //   width: 700px; // 98px
 //   // max-width: 100%;
 //   height: auto;
 //   text-align: center;
-//   // overflow: hidden;
-//   // @include border-radius(200px);
-//   // margin: 0 auto;
-//   // display: block;
-// }
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 0 auto;
+}
 
 .page-header { padding: 1.5rem 0;
 
