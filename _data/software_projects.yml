@@ -1,6 +1,10 @@
 # Software Projects
 # uncomment the urls if you wish to display them, and add your own URL
 
+- project: Linear Regression Applied to Wind Tunnel Data
+  url: ""
+  description: Explores linear regression techniques, such as SGD Regression, WLS, coefficient multicollinearity analysis, and outlier identification with leverage and Cook's Distance, and applies them to wind tunnel test data to approximate the coefficient of drag.
+
 - project: Multi-layer Composite Stress & Strain Curve
   url: "https://github.com/CamdenLHill/Portfolio/tree/6f08802640fb34b2dfcb2037445d1e626f76a738/Scripts/Multi-layer%20Composite%20Stress%20%26%20Strain%20Curve"
   description: The final project in my composites class used to calculate the multiple yield/failure points of a multi-layer composite.
