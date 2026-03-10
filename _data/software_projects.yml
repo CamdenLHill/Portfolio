@@ -2,7 +2,7 @@
 # uncomment the urls if you wish to display them, and add your own URL
 
 - project: Logistic Regression and Clustering
-  url: "https://github.com/CamdenLHill/Portfolio/tree/757b761a3fc174e8165065f48b6a47878405a0c0/scripts/Linear%20Regression%20Applied%20to%20Wind%20Tunnel%20Data"
+  url: https://github.com/CamdenLHill/Portfolio/tree/68f59028b2940cf309e842675b55f92793814db2/scripts/Logistic%20Regression%20and%20Clustering
   description: Explores logistic regression, K-Means clustering, PCA dimension reduction, non-linear decision planes, Batch Gradient Regression (GD), and Stochastic Gradient Regression (SGD) applied to the logistic regression model.
 
 - project: Linear Regression Applied to Wind Tunnel Data
