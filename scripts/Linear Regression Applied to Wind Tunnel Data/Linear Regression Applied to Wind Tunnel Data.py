@@ -66,12 +66,13 @@ print("All packages imported successfully!")
 
 
 # Load the data
-# TODO: Load data from data/drag_data.csv
+#  Load data from data/drag_data.csv
 
 # Loads and displays data
 current_dir = os.getcwd()
 file_path_rel = "drag_data.csv"
 full_path = os.path.join(current_dir, file_path_rel)
+full_path = # \drag_data.csv"
 # print(full_path)
 df = pd.read_csv(full_path)
 
@@ -80,7 +81,7 @@ df = pd.read_csv(full_path)
 
 
 # Display first 10 rows
-# TODO: Show first 10 rows of the dataset
+#  Show first 10 rows of the dataset
 df.head(10)
 
 
@@ -88,7 +89,7 @@ df.head(10)
 
 
 # Summary statistics
-# TODO: Compute and display summary statistics for all variables
+#  Compute and display summary statistics for all variables
 c_names = df.columns
 num_columns = len(c_names)
 summary_statistics = {}
@@ -108,7 +109,7 @@ for i in range(num_columns):
 
 # ### Analysis: Feature Scales
 # 
-# **TODO: Write 1-2 paragraphs discussing:**
+# ** Write 1-2 paragraphs discussing:**
 # - Which features span multiple orders of magnitude?
 # - Why might this be problematic for linear regression?
 # - What strategies could address this issue?
@@ -130,7 +131,7 @@ for i in range(num_columns):
 
 
 # Scatter plots: C_D vs features
-# TODO: Create scatter plots showing C_D vs alpha, Mach, Reynolds
+#  Create scatter plots showing C_D vs alpha, Mach, Reynolds
 # For C_D vs Mach, color-code by regime (subsonic M < 0.7, transonic M >= 0.7)
 plt.scatter(df[c_names[0]],df[c_names[-1]],color=(np.random.random(), np.random.random(), np.random.random()))
 plt.xlabel("alpha")
@@ -168,7 +169,7 @@ plt.show()
 
 
 # Correlation matrix
-# TODO: Create and display correlation matrix heatmap
+#  Create and display correlation matrix heatmap
 co_mtx = df.corr(numeric_only=True)
 print(co_mtx)
 sns.heatmap(co_mtx,cmap="YlGnBu", annot=True)
@@ -177,7 +178,7 @@ plt.show()
 
 # ### Analysis: Relationships and Patterns
 # 
-# **TODO: Write 1-2 paragraphs discussing:**
+# ** Write 1-2 paragraphs discussing:**
 # - Which features show strong linear relationships with C_D?
 # - Different behavior in subsonic vs transonic regimes?
 # - Any obvious outliers or unusual patterns?
@@ -197,7 +198,7 @@ plt.show()
 
 
 # Prepare features and target
-# TODO: Extract features (alpha, Mach, Reynolds) and target (C_D)
+#  Extract features (alpha, Mach, Reynolds) and target (C_D)
 X = df[c_names[:-1]]
 y = df[c_names[-1]]
 print(X)
@@ -208,14 +209,14 @@ print(y)
 
 
 # Feature Set A: General Polynomial Features
-# TODO: Create polynomial features up to degree 2
+#  Create polynomial features up to degree 2
 general_poly = PolynomialFeatures(degree = 2, include_bias = False) # , include_bias = True
 X_gen = general_poly.fit_transform(X)
 print(X_gen)
 X_traing, X_testg, y_traing, y_testg = train_test_split(X_gen, y, test_size=0.2, random_state=42)
 # X_gen = general_poly.fit_transform(X)
 
-# TODO: Apply StandardScaler
+#  Apply StandardScaler
 scaler_gen = StandardScaler()
 X_gen_scaled_train = scaler_gen.fit_transform(X_traing)
 X_gen_scaled_test = scaler_gen.transform(X_testg)
@@ -229,7 +230,7 @@ print(X_gen_scaled_train)
 
 
 # Feature Set B: Physics-Inspired Features
-# TODO: Engineer features based on aerodynamic theory
+#  Engineer features based on aerodynamic theory
 # Hints:
 # - Induced drag: related to alpha^2
 # - Reynolds drag: consider Re^(-0.2) or log(Re) for multi-order variation
@@ -289,7 +290,7 @@ X_phys[:,5] = 1/((1 - (df[c_names[1]]**2))**0.5) # 1/sqrt(1-M^2)
 # print(df[c_names[1]][0]*df[c_names[2]][0])
 print("First Row of Physics-Based Fit Matrix: ", X_phys[0,:])
 print("Last Row of Physics-Based Fit Matrix: ", X_phys[-1,:])
-# TODO: Apply StandardScaler
+#  Apply StandardScaler
 indices_phys = np.arange(len(X_phys[:,0]))
 X_trainp, X_testp, y_trainp, y_testp, train_indicesp, test_indicesp = train_test_split(X_phys, y, indices_phys, test_size=0.2, random_state=42)
 
@@ -302,7 +303,7 @@ SD_phys = scaler_phys.scale_
 
 # ### Justification: Physics-Based Features
 # 
-# **TODO: Write 1-2 paragraphs explaining:**
+# ** Write 1-2 paragraphs explaining:**
 # - Why you chose specific physics-based features
 # - How they relate to the drag decomposition (induced, viscous, wave, compressibility)
 # - How you handled the multi-order magnitude Reynolds number variation
@@ -321,7 +322,7 @@ SD_phys = scaler_phys.scale_
 
 
 # Train-test split
-# TODO: Split both feature sets and target into train/test (80/20, random_state=42)
+#  Split both feature sets and target into train/test (80/20, random_state=42)
 
 print("Splitting was done previously for both the physics-based and general polynomial models because fitting the scaled X before splitting it")
 print("allows data leakage. Meaning the test data is included in the training of the model. Which, invalidates the point of splitting the")
@@ -343,7 +344,7 @@ print("the assignment to make this change. Therefore, a lot of this assignment h
 
 
 # Model A: Polynomial Features
-# TODO: Train LinearRegression model on polynomial features
+#  Train LinearRegression model on polynomial features
 # 2. Create General Polynomial and train model
 modelg = LinearRegression()
 modelg.fit(X_gen_scaled_train, y_traing)
@@ -351,7 +352,7 @@ modelg.fit(X_gen_scaled_train, y_traing)
 # 2. Create Physics-Based and train model
 modelp = LinearRegression()
 modelp.fit(X_phys_scaled_train, y_trainp)
-# TODO: Compute predictions on train and test sets
+#  Compute predictions on train and test sets
 # 3. Make General Polynomial predictions
 y_predg = modelg.predict(X_gen_scaled_test)
 
@@ -363,7 +364,7 @@ y_predp = modelp.predict(X_phys_scaled_test)
 
 
 # Compute metrics for both models
-# TODO: Calculate R², Adjusted R², RMSE, MAE for train and test sets
+#  Calculate R², Adjusted R², RMSE, MAE for train and test sets
 # 4. General Polynomial Evaluate
 interceptg = modelg.intercept_
 coefficientsg = modelg.coef_
@@ -400,7 +401,7 @@ maxep = max_error(y_testp, y_predp)
 
 
 # Create comparison table
-# TODO: Display metrics in a comparison table
+#  Display metrics in a comparison table
 reg_metrics = {"GP":{"MSE":mseg,"RMSE":rmseg,"R^2":r2g,"R_adj^2":r2ag,"MAE":maeg,"MAPE":mapeg,"Max Error":maxeg},#,"CV Score":cvsg},
                "PB":{"MSE":msep,"RMSE":rmsep,"R^2":r2p,"R_adj^2":r2ap,"MAE":maep,"MAPE":mapep,"Max Error":maxep}}#,"CV Score":cvsp}}
 
@@ -436,7 +437,7 @@ print("1, a x M, a x Re, M, M^2, log(Re), 1/sqrt(1-M^2) = 0.8794251462926067")
 
 # ### Analysis: Model Comparison
 # 
-# **TODO: Write 2-3 paragraphs discussing:**
+# ** Write 2-3 paragraphs discussing:**
 # - Which model performs better on test data?
 # - Is there evidence of overfitting? (compare train vs test)
 # - Which metrics are most meaningful for this application?
@@ -457,7 +458,7 @@ print("1, a x M, a x Re, M, M^2, log(Re), 1/sqrt(1-M^2) = 0.8794251462926067")
 
 
 # Compute residuals for test set
-# TODO: Calculate residuals = actual - predicted for your best model
+#  Calculate residuals = actual - predicted for your best model
 residualsg = y_testg - y_predg
 residualsp = y_testp - y_predp
 
@@ -466,7 +467,7 @@ residualsp = y_testp - y_predp
 
 
 # Diagnostic plots
-# TODO: Create residuals vs fitted values plot
+#  Create residuals vs fitted values plot
 plt.scatter(y_predg, residualsg, label="Polynomial 10-term")
 plt.scatter(y_predp, residualsp, label="Physics 7-term")
 plt.axhline(y=0, color='r', linestyle='--')
@@ -476,7 +477,7 @@ plt.title('Residual vs. Fitted Values Plot')
 plt.grid()
 plt.legend()
 plt.show()
-# TODO: Create residuals vs Mach number plot
+#  Create residuals vs Mach number plot
 
 # Mach_scaled_min = min(X_gen_scaled[:,2])
 # Mach_scaled_max = max(X_gen_scaled[:,2])
@@ -517,7 +518,7 @@ plt.show()
 
 # ### Analysis: Residual Diagnostics
 # 
-# **TODO: Write 2 paragraphs discussing:**
+# ** Write 2 paragraphs discussing:**
 # - Pattern in residuals (random or systematic)?
 # - Evidence of heteroscedasticity?
 # - Which Mach regime has larger residuals?
@@ -539,7 +540,7 @@ plt.show()
 
 
 # Display model coefficients
-# TODO: Show coefficients from physics-inspired model (Model B)
+#  Show coefficients from physics-inspired model (Model B)
 print("Final Physics-Based Form:")
 print("Scaled Intercept = {}".format(interceptg))
 print("Scaled Coefficients = {}".format([i for i in coefficientsg if abs(i) > (10**-16)]))
@@ -553,7 +554,7 @@ print("Scaled Coefficients = {}".format([i for i in coefficientsp if abs(i) > (1
 # print("Coefficients: 1:{}, a x Re: {}, M^2: {}, log(Re): {},\n1/sqrt(1-M^2): {}, (M - M_crit)^2 @ Mcrit > 0.7: {}".format(coefficientsp[0],coefficientsp[1],coefficientsp[2],coefficientsp[3],coefficientsp[4],coefficientsp[5]))
 # print("Coefficients: 1:{}, a x Re: {}, log(Re): {},\n1/sqrt(1-M^2): {}, (M - M_crit)^2 @ Mcrit > 0.7: {}".format(coefficientsp[0],coefficientsp[1],coefficientsp[2],coefficientsp[3],coefficientsp[4]))
 
-# TODO: Identify largest coefficients by magnitude
+#  Identify largest coefficients by magnitude
 
 # true_coefficientsg = np.zeros(coefficients_numg)
 # for i in range(coefficients_numg):
@@ -698,7 +699,7 @@ plt.show()
 
 # ### Interpretation and Recommendation
 # 
-# **TODO: Write 2-3 paragraphs addressing:**
+# ** Write 2-3 paragraphs addressing:**
 # 
 # **Physical Interpretation:**
 # - Do coefficient signs make physical sense?
@@ -733,7 +734,7 @@ plt.show()
 
 # ### Derivation: Calculus Approach
 # 
-# **TODO: Derive the normal equations starting from RSS minimization**
+# ** Derive the normal equations starting from RSS minimization**
 # 
 # Starting with:
 # $$\text{RSS}(\boldsymbol{\beta}) = \|\boldsymbol{y} - \boldsymbol{X}\boldsymbol{\beta}\|^2$$
@@ -752,7 +753,7 @@ plt.show()
 
 # ### Derivation: Geometric Approach
 # 
-# **TODO: Derive using projection matrix and orthogonality**
+# ** Derive using projection matrix and orthogonality**
 # 
 # Define projection matrix:
 # $$\boldsymbol{P} = \boldsymbol{X}(\boldsymbol{X}^T\boldsymbol{X})^{-1}\boldsymbol{X}^T$$
@@ -864,7 +865,7 @@ plt.show()
 
 
 # Gradient Descent Implementation
-# TODO: Use SGDRegressor with your best feature set
+#  Use SGDRegressor with your best feature set
 # # Redirect stdout
 # old_stdout = sys.stdout
 # sys.stdout = mystdout = StringIO()
@@ -927,8 +928,8 @@ for i in learning_rates:
 # coefficients_nump = len(coefficientsp)
 ######
 
-# TODO: Experiment with learning rates and iterations
-# TODO: Track loss over iterations
+#  Experiment with learning rates and iterations
+#  Track loss over iterations
 for i in range(len(learning_rates)):
     plt.plot(SGD_data[learning_rates[i]]["iteration"],SGD_data[learning_rates[i]]["cost"],label = learning_rates[i],color = colors[i])
 plt.grid()
@@ -1018,7 +1019,7 @@ plt.show()
 
 
 # Compare coefficients: GD vs closed-form
-# TODO: Display both sets of coefficients side by side
+#  Display both sets of coefficients side by side
 msepSGD = SGD_data[("invscaling",0.001)]["Final MSE"]
 rmsepSGD = np.sqrt(msepSGD)
 r2pSGD = SGD_data[("invscaling",0.001)]["Final R^2"]
@@ -1070,7 +1071,7 @@ print("Physics-Based SGD Coefficients:\n1: {}, a x M: {}, a x Re: {}, M: {},\nM^
 
 
 # Convergence plot
-# TODO: Plot loss vs iteration number
+#  Plot loss vs iteration number
 
 Real_color = "green" # (np.random.random(), np.random.random(), np.random.random())
 plt.scatter(df[c_names[0]],df[c_names[-1]],label="Real",color=Real_color)
@@ -1112,7 +1113,7 @@ plt.show()
 
 # ### Analysis: Gradient Descent vs Closed-Form
 # 
-# **TODO: Write 2 paragraphs discussing:**
+# ** Write 2 paragraphs discussing:**
 # - Convergence behavior and iterations needed
 # - When is GD preferred over closed-form?
 # - Computational complexity differences (O(d³) for matrix inversion)
@@ -1134,7 +1135,7 @@ plt.show()
 
 
 # Correlation heatmap for physics-inspired features
-# TODO: Create heatmap showing pairwise correlations
+#  Create heatmap showing pairwise correlations
 df_X_gen = pd.DataFrame(X_gen_scaled_train)
 co_mtx = df_X_gen.corr(numeric_only=True)
 print(co_mtx)
@@ -1152,7 +1153,7 @@ plt.show()
 
 
 # Calculate VIF
-# TODO: Compute variance inflation factor for each feature
+#  Compute variance inflation factor for each feature
 # Hint: Use statsmodels.stats.outliers_influence.variance_inflation_factor
 print("VIF of Original Data Frame:")
 X = add_constant(df)
@@ -1178,7 +1179,7 @@ print(vif_data)
 
 # ### Analysis: Multicollinearity
 # 
-# **TODO: Write 2 paragraphs discussing:**
+# ** Write 2 paragraphs discussing:**
 # - Which features have high correlation (|ρ| > 0.7) or VIF > 10?
 # - Physical explanation for multicollinearity (are terms naturally related?)
 # - Impact on coefficient interpretability, prediction accuracy, stability
@@ -1201,7 +1202,7 @@ print(vif_data)
 
 
 # Regime-specific modeling
-# TODO: Split data into subsonic (M < 0.7) and transonic (M >= 0.7)
+#  Split data into subsonic (M < 0.7) and transonic (M >= 0.7)
 
 # dfsorted = df.copy(deep=True)
 # print(dfsorted)
@@ -1233,7 +1234,7 @@ num_rows_tra = len(df_tra[c_names[1]][:])
 # print(num_rows_tra)
 
 ####
-# TODO: Train separate models for each regime
+#  Train separate models for each regime
 X_phys_sub = np.zeros((num_rows_sub, 6))
 # X_phys_sub[:,0] = [1 for i in range(num_rows_sub)] # 1
 X_phys_sub[:,0] = df_sub[c_names[0]]*df_sub[c_names[1]] # a x M
@@ -1257,7 +1258,7 @@ X_phys_sub_scaled_test = scaler_phys_sub.transform(X_testp_sub)
 mean_sub = scaler_phys_sub.mean_
 SD_sub = scaler_phys_sub.scale_
 
-# TODO: Train separate models for each regime
+#  Train separate models for each regime
 X_phys_tra = np.zeros((num_rows_tra, 7))
 # X_phys_tra[:,0] = [1 for i in range(num_rows_tra)] # 1
 X_phys_tra[:,0] = df_tra[c_names[0]]*df_tra[c_names[1]] # a x M
@@ -1279,7 +1280,7 @@ for i in range(num_rows_tra):
 # print(df[c_names[1]][0]*df[c_names[2]][0])
 print("First Row of Physics-Based Fit Matrix: ", X_phys_tra[0,:])
 # print("Last Row of Physics-Based Fit Matrix: ", X_phys_tra[-1,:])
-# TODO: Apply StandardScaler
+#  Apply StandardScaler
 
 X_trainp_tra, X_testp_tra, y_trainp_tra, y_testp_tra = train_test_split(X_phys_tra, y_tra, test_size=0.2, shuffle=True, random_state=42)
 
@@ -1302,7 +1303,7 @@ y_predp_tra = modelp_tra.predict(X_phys_tra_scaled_test)
 # In[ ]:
 
 
-# TODO: Compare performance to global model
+#  Compare performance to global model
 interceptp_sub = modelp_sub.intercept_
 coefficientsp_sub = modelp_sub.coef_
 coefficients_nump_sub = len(coefficientsp_sub)
@@ -1491,7 +1492,7 @@ plt.show()
 
 
 # Feature importance by regime
-# TODO: Identify largest coefficient magnitudes in each regime
+#  Identify largest coefficient magnitudes in each regime
 print("Scaled Physics-Based Subsonic Intercept = {}".format(interceptp_sub))
 print("Scaled Physics-Based Subsonic Coefficients: {}".format(coefficientsp_sub))
 print("Physics-Based Subsonic Intercept = {}".format(true_interceptp_sub))
@@ -1502,7 +1503,7 @@ print("Scaled Physics-Based Transonic Coefficients: {}".format(coefficientsp_tra
 print("Physics-Based Transonic Intercept = {}".format(true_interceptp_tra))
 print("Physics-Based Transonic Coefficients: {}".format(true_coefficientsp_tra))
 
-# TODO: Compare dominant features between regimes
+#  Compare dominant features between regimes
 df_X_phys_sub = pd.DataFrame(X_phys_sub_scaled_train)
 co_mtx = df_X_phys_sub.corr(numeric_only=True)
 print(co_mtx)
@@ -1534,7 +1535,7 @@ print(vif_data)
 
 
 # Cross-validation stability
-# TODO: Perform 5-fold cross-validation
+#  Perform 5-fold cross-validation
 n_splits_sub = 5
 kf_sub = KFold(n_splits = n_splits_sub, random_state=42, shuffle=True)
 kf_sub.get_n_splits()
@@ -1547,7 +1548,7 @@ kf_tra.get_n_splits()
 # In[ ]:
 
 
-# TODO: Track coefficient values across folds
+#  Track coefficient values across folds
 print("Subsonic KFold Process:\n")
 KFold_sub = {}
 for i, (train_index, test_index) in enumerate(kf_sub.split(X_phys_sub)):
@@ -1597,7 +1598,7 @@ for i, (train_index, test_index) in enumerate(kf_sub.split(X_phys_sub)):
     # print(f"  Train: index={train_index}")
     # print(f"  Test:  index={test_index}")
 
-# TODO: Compute mean and std of each coefficient
+#  Compute mean and std of each coefficient
 coefvals_sub_list_un = [[] for i in range(coefficients_nump_sub + 1)]
 for i in range(coefficients_nump_sub + 1):
     # print(i)
@@ -1626,7 +1627,7 @@ print("CV Score: {}".format(np.mean(CV_score_sub)))
 # In[ ]:
 
 
-# TODO: Track coefficient values across folds
+#  Track coefficient values across folds
 print("Transonic KFold Process:\n")
 KFold_tra = {}
 for i, (train_index, test_index) in enumerate(kf_tra.split(X_phys_tra)):
@@ -1658,7 +1659,7 @@ for i, (train_index, test_index) in enumerate(kf_tra.split(X_phys_tra)):
     print("KFold {} Unscaled Subsonic Coefficients: {}".format(i,KFold_tra[str(i)][1]))
 
 
-# TODO: Compute mean and std of each coefficient
+#  Compute mean and std of each coefficient
 coefvals_tra_list_un = [[] for i in range(coefficients_nump_tra + 1)]
 for i in range(coefficients_nump_tra + 1):
     # print(i)
@@ -1693,7 +1694,7 @@ print("CV Score: {}".format(np.mean(CV_score_tra)))
 
 # ### Analysis: Regime-Dependent Behavior
 # 
-# **TODO: Write 2-3 paragraphs discussing:**
+# ** Write 2-3 paragraphs discussing:**
 # - Performance comparison: global vs regime-specific models
 # - Which physical effects dominate in each regime?
 # - Does this align with aerodynamic theory?
@@ -1715,7 +1716,7 @@ print("CV Score: {}".format(np.mean(CV_score_tra)))
 
 
 # Heteroscedasticity diagnosis
-# TODO: Plot residual variance in different Mach bins
+#  Plot residual variance in different Mach bins
 residualsp_sub = y_testp_sub - y_predp_sub
 residualsp_tra = y_testp_tra - y_predp_tra
 
@@ -1740,7 +1741,7 @@ plt.legend()
 plt.show()
 
 
-# TODO: Check if variance increases with Mach
+#  Check if variance increases with Mach
 print("Through visual inspection variance seems to increase as Mach Number increases in both the subsonic and transonic models")
 
 
@@ -1748,8 +1749,8 @@ print("Through visual inspection variance seems to increase as Mach Number incre
 
 
 # Weighted Least Squares
-# TODO: Estimate variance as function of Mach
-# TODO: Construct weights w_i = 1/sigma_i^2
+#  Estimate variance as function of Mach
+#  Construct weights w_i = 1/sigma_i^2
 # W_sub = np.zeros((n_sub,n_sub))
 # for i in range(n_sub):
 #     W_sub[i,i] = 1/(np.std(X_phys_sub[:,i])**2)
@@ -1785,14 +1786,14 @@ for i in range(len(SD_t)): # had to do this otherwise weights would be infinity
 W = 1 / (SD_t**2)
 print(W[:10])
 
-# TODO: Train WLS model using sample_weight parameter
+#  Train WLS model using sample_weight parameter
 modelp_WLS = LinearRegression()
 modelp_WLS.fit(X_phys_scaled_train, y_trainp, sample_weight = W)
 y_predp_WLS = modelp_WLS.predict(X_phys_scaled_test)
 # mean_phys_WLS = modelp_WLS.mean_
 # SD_phys_WLS = modelp_WLS.scale_
 
-# TODO: Compare WLS vs OLS performance
+#  Compare WLS vs OLS performance
 interceptp_t = modelp_WLS.intercept_
 coefficientsp_t = modelp_WLS.coef_
 coefficients_nump_t = len(coefficientsp_t)
@@ -1856,7 +1857,7 @@ plt.show()
 
 # ### Analysis: Weighted Least Squares
 # 
-# **TODO: Write 1-2 paragraphs explaining:**
+# ** Write 1-2 paragraphs explaining:**
 # - How you estimated Mach-dependent variance
 # - Why inverse variance weighting makes theoretical sense
 # - Impact of WLS on model performance and residuals
@@ -1875,7 +1876,7 @@ plt.show()
 
 
 # Leverage calculation
-# TODO: Compute leverage values (diagonal of hat matrix)
+#  Compute leverage values (diagonal of hat matrix)
 n_phys_train = len(X_phys_scaled_train[:,0])
 # H = np.zeros(n_phys_train)
 mat1,mat2 = [X_phys_scaled_train.T, X_phys_scaled_train]
@@ -1887,7 +1888,7 @@ H = np.diag(np.matmul(np.matmul(mat2,val),mat1))
 #     H[i] = np.matmul(np.matmul(mat1[:,i],val),mat2[i,:])
 print(H[:20])
 
-# TODO: Identify high-leverage points (h_i > 2p/n)
+#  Identify high-leverage points (h_i > 2p/n)
 p = 1 + len(coefficientsp)
 print(p)
 h_avg = p / n_phys_train
@@ -1903,7 +1904,7 @@ for i in range(n_phys_train):
 
 
 # Cook's distance
-# TODO: Use OLSInfluence to compute Cook's distance
+#  Use OLSInfluence to compute Cook's distance
 phys_sm_model = sm.OLS(y_trainp,X_phys_scaled_train)
 phys_results = phys_sm_model.fit()
 phys_OLSinf = phys_results.get_influence()
@@ -1916,14 +1917,14 @@ print("First 10 values of P-values: {}".format(p_values[:10]))
 # print(cooks_d)
 # print(p_values)
 
-# TODO: Identify influential points (D_i > 1 or D_i > 4/n)
+#  Identify influential points (D_i > 1 or D_i > 4/n)
 influential_D_ind = []
 for i in range(n_phys_train):
     if cooks_d[i] > (4/n_phys_train):
         influential_D_ind.append(i)
         print("index = {}: Cook's Distance = {}".format(i,cooks_d[i]))
 
-# TODO: Plot Cook's distance
+#  Plot Cook's distance
 plt.scatter(leverage,cooks_d)
 plt.xlabel("Leverage (h^)")
 plt.xlabel("Cook's Distance (D_i)")
@@ -1935,7 +1936,7 @@ plt.show()
 
 
 # Examine outliers
-# TODO: Display outlier Mach numbers and characteristics
+#  Display outlier Mach numbers and characteristics
 plt.scatter(X_phys_scaled_train[:,2],leverage,label="Leverage",color="blue")
 plt.scatter(X_phys_scaled_train[:,2],cooks_d,label="Cook's Distance",color="red")
 plt.scatter(X_phys_scaled_train[influential_D_ind,2],leverage[influential_D_ind],label="Leverage Outliers",color="green")
@@ -1961,8 +1962,8 @@ plt.show()
 
 
 # Sensitivity analysis
-# TODO: Retrain model with outliers removed
-# TODO: Compare performance and coefficients
+#  Retrain model with outliers removed
+#  Compare performance and coefficients
 modelp_C = LinearRegression()
 print(influential_D_ind)
 # print(len(X_phys_scaled_train[:,0]))
@@ -2040,7 +2041,7 @@ plt.show()
 
 # ### Analysis: Outlier Treatment
 # 
-# **TODO: Write 2 paragraphs addressing:**
+# ** Write 2 paragraphs addressing:**
 # 
 # **Physical Justification:**
 # - Where do outliers occur (Mach numbers)?
@@ -2060,7 +2061,7 @@ plt.show()
 # ---
 # # Summary and Conclusions
 # 
-# **TODO: Write a brief summary (1-2 paragraphs) of your key findings:**
+# ** Write a brief summary (1-2 paragraphs) of your key findings:**
 # - Most important insights about drag prediction
 # - Which modeling approach you recommend and why
 # - Limitations of your analysis
